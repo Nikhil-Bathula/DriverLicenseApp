@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("layouts/header") -%>
+  <body>
+    <!-- Navigation-->
+    <%- include("layouts/navbar") -%>
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('assets/img/Information.webp')"
+    >
+      <!-- <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="checkInfo">
+              <h2 class="cardtlsHeadingG">Check your Information</h2>
+              <form method="POST" action="/fetchpersonalInfo">
+                <input
+                  id="licenseNumber"
+                  name="licenseNumber"
+                  type="text"
+                  class="loginTextElementG"
+                  placeholder="License Number"
+                />
+                <% if (personalInfo.userNotFound) { %>
+                 <div class="errorMsg">User not found</div>
+                <% } %>
+                <input type="submit" class="sbmtBtnG" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <form method="POST" action="/updatePersonalInfo">
+              <div class="psnlInfo">
+                <h2 class="psnlInfoHeading">Personal Information</h2>
+                <div>
+                  <input
+                    id="id"
+                    name="id"
+                    type="hidden"
+                    value=<%= personalInfo._id %>
+                  />
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type="hidden"
+                    class="loginTextElement"
+                    placeholder="First Name"
+                    value=<%= personalInfo.firstName %>
+                  >
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="hidden"
+                    class="loginTextElement"
+                    placeholder="Last Name"
+                    value=<%= personalInfo.lastName %>
+                  >
+                  <input
+                    id="firstName"
+                    name="firstNam"
+                    type="text"
+                    class="loginTextElement"
+                    placeholder="First Name"
+                    disabled
+                    value=<%= personalInfo.firstName %>
+                  >
+                  <input
+                    id="lastName"
+                    name="lastNam"
+                    type="text"
+                    class="loginTextElement"
+                    placeholder="Last Name"
+                    disabled
+                    value=<%=personalInfo.lastName%>
+                  >
+                </div>
+                <div>
+                  <input
+                    id="licenseNumber"
+                    name="licenseNumber"
+                    type="hidden"
+                    class="loginTextElement"
+                    placeholder="License Number"
+                    value=<%=personalInfo.licenseNumber%>
+                  >
+                  <input
+                    name="age"
+                    type="hidden"
+                    class="loginTextElement"
+                    placeholder="Age"
+                    value=<%= personalInfo.age %>
+                  >
+                  <input
+                    name="ag"
+                    type="number"
+                    class="loginTextElement"
+                    placeholder="Age"
+                    disabled
+                    value=<%= personalInfo.age %>
+                  >
+                </div>
+              </div>
+              <div class="carDtls">
+                <h2 class="cardtlsHeading">Car Details</h2>
+                <input
+                  id="make"
+                  name="make"
+                  type="text"
+                  class="loginTextElement"
+                  placeholder="Company"
+                  value=<%=personalInfo.carDetails.make%>
+                >
+                <input
+                  id="model"
+                  name="model"
+                  type="text"
+                  class="loginTextElement"
+                  placeholder="Model"
+                  value=<%=personalInfo.carDetails.model%>
+                >
+                <input
+                  id="year"
+                  name="year"
+                  type="number"
+                  class="loginTextElement"
+                  placeholder="Year"
+                  value=<%=personalInfo.carDetails.year%>
+                >
+                <input
+                  id="platNo"
+                  name="platNo"
+                  type="text"
+                  class="loginTextElement"
+                  placeholder="Plate Number"
+                  value=<%=personalInfo.carDetails.plateNo%>
+                >
+              </div>
+              <input type="submit" value="Update" class="sbmtBtn" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content-->
+    <!-- Footer-->
+    <%- include("layouts/footer") -%> <%- include("layouts/scripts") -%>
+  </body>
+</html>
