@@ -10,6 +10,7 @@ const PersonalInfoSchema = new Schema({
     password: {type: String, default: "demo"},
     role: {type: String, default: "driver"},
     userName: {type: String, default: "demo"},
+    appointmentID: {type: mongoose.Schema.Types.ObjectId, ref: "Appointments", default: null},
     carDetails: {
       make: {type: String, default: "Default"},
       model: {type: String, default: "Default"},

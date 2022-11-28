@@ -60,6 +60,26 @@
                       value=<%= personalInfo.age %>
                       disabled
                     />
+                    <input
+                    name="date"
+                    type="date"
+                    id="dateValueG2"
+                    class="loginTextElement"
+                    placeholder="Date"
+                  />
+                  <input
+                    name="date"
+                    type="hidden"
+                    id="hiddenDateValueG2"
+                    class="loginTextElement"
+                    placeholder="Date"
+                    value=<%= stringData %> 
+                  />
+                  </div>
+                  <div>
+                    <select name="g2time" id="g2time">
+                    </select>
+                    <input type="hidden" name="hiddenG2Time" id="hiddenG2Time">
                   </div>
                 <% } else { %>
                 <div>
@@ -102,6 +122,24 @@
                   >
                 </div>
                 <div>
+                  <input
+                    name="date"
+                    type="date"
+                    id="dateValueG2"
+                    class="loginTextElement"
+                    placeholder="Date"
+                  />
+                  <input
+                    name="date"
+                    type="hidden"
+                    id="hiddenDateValueG2"
+                    class="loginTextElement"
+                    placeholder="Date"
+                    value=<%= stringData %> 
+                  />
+                  <select name="g2time" id="g2time">
+                  </select>
+                  <input type="hidden" name="hiddenG2Time" id="hiddenG2Time">
                 </div>
                 <% } %>
               </div>

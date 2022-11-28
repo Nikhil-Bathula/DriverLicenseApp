@@ -1,19 +1,17 @@
 const PersonalInfo = require("../models/PersonalInfo");
 const bcrypt = require("bcrypt");
+const Appointments = require("../models/Appointments");
 
-const g2Page = (req, res) => {
+const g2Page = async (req, res) => {
   if (req.session.userType === "admin") {
     res.redirect("/");
   } else {
+    const allAppointments = await Appointments.find({isTimeSlotAvailable: { $in: true }});
+    const stringData = JSON.stringify(allAppointments);
+    req.body.stringData = stringData;
     fetchPersonalInfo(req, res);
   }
 };
-
-// const formatDate = (date) => {
-//   return new Promise((resolve, reject) => {
-//     resolve(moment(date).format("YYYY-MM-DD"));
-//   });
-// };
 
 const fetchPersonalInfo = async (req, res) => {
   try {
@@ -42,20 +40,13 @@ const fetchPersonalInfo = async (req, res) => {
           personalInfo.disablePersonalInfoFields = true;
           global.disablePersonalInfoFields = true;
         }
+        const stringData = req.body.stringData;
         if (req.url === "/g") {
           res.render("g", { personalInfo });
         } else {
-          res.render("g2", { personalInfo });
+          res.render("g2", { personalInfo, stringData });
         }
       });
-    // } else {
-    //   const obj = { userNotFound: true };
-    //   if (req.url === "/g") {
-    //     res.render("g", { personalInfo: obj });
-    //   } else {
-    //     res.render("g2", { personalInfo });
-    //   }
-    // }
   } catch (e) {
     console.log(e);
   }

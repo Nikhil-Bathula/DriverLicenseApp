@@ -34,7 +34,8 @@ const validateUser = (req, res) => {
         }
       });
     } else {
-      res.redirect("login");
+      const showErrorMsg = true;
+      res.render("login", { showErrorMsg });
     }
   });
 }
