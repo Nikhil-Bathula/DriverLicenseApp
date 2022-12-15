@@ -2847,7 +2847,9 @@ textarea.form-control-lg {
 }
 
 .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: -1px;
 }
 
@@ -11732,3 +11734,30 @@ select {
   border-radius: 5px;
   height: 34px;
 }
+
+#popup_box {
+  position: absolute;
+  top: 18%;
+  left: 35%;
+  width: 25em;
+  height: 20em;
+  margin-top: -5em; 
+  margin-left: -5em; 
+  border: 1px solid #ccc;
+  border: 2px solid black;
+  z-index: 100;
+  background-color: #555;
+  display: grid;
+  color: #fff;
+}
+
+#table {
+  color: white;
+  text-align: center;
+  width: 1000px;
+}
+
+#tableHeading {
+  padding: 15px;
+}
+

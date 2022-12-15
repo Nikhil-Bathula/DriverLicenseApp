@@ -25,6 +25,12 @@ const validateUser = (req, res) => {
           } else {
             showAdminAuthenticatedRoutes = false;
           }
+          console.log('user.role')
+          if (user.role === "examiner") {
+            showExaminerAuthenticatedRoutes = true;
+          } else {
+            showExaminerAuthenticatedRoutes = false;
+          }
 
           res.render("index");
         } else {

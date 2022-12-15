@@ -32,6 +32,7 @@ const updatePersonalInfo = async (req, res) => {
       licenseNumber: licenseNumber,
       age: req.body.age,
       appointmentID: req.body.hiddenG2Time ? req.body.hiddenG2Time : null,
+      testType: req.body.testType,
       carDetails: {
         make: req.body.make,
         model: req.body.model,

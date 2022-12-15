@@ -27,6 +27,7 @@ const fetchPersonalInfo = async (req, res) => {
             lastName: null,
             licenseNumber: null,
             age: null,
+            testType: null,
             carDetails: {
               make: null,
               model: null,

@@ -15,6 +15,9 @@
                 <% if (showAdminAuthenticatedRoutes) { %>
                   <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/appointments">Appointments</a></li>
                 <% } %>
+                <% if (showExaminerAuthenticatedRoutes) { %>
+                  <li class="nav-item" id="examinerTab"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/employer">Employer</a></li>
+                <% } %>
                 <% if (!loggedIn) { %>
                   <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/login">Login</a></li>
                   <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/signup">Signup</a></li>
