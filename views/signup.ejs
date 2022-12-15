@@ -1,63 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("layouts/header") -%>
-  <body>
-    <!-- Navigation-->
-    <%- include("layouts/navbar") -%>
-    <!-- Page Header-->
-    <header
-      class="masthead"
-      style="background-image: url('assets/img/Login Page.jpg')"
-    >
-      <div
-        class="container position-relative px-4 px-lg-5"
-        style="margin-top: 90px"
-      >
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-            <div class="psnlInfo">
-              <h2 class="loginHeading">Signup</h2>
-              <form action="/createData" method="post">
-                <div>
-                  <input
-                    name="firstName"
-                    type="text"
-                    class="loginTextElement"
-                    placeholder="User Name"
-                  />
-                  <input
-                    name="password"
-                    type="password"
-                    class="loginTextElement"
-                    placeholder="Password"
-                  />
-                  <input
-                    name="repeatPassword"
-                    type="password"
-                    class="loginTextElement"
-                    placeholder="Repeat Password"
-                  />
-                  <select name="type" id="type">
+<%- include("layouts/header") -%>
+
+    <body>
+        <!-- Navigation-->
+        <%- include("layouts/navbar") -%>
+            <!-- Page Header-->
+            <header class="masthead" style="background-image: url('assets/img/Login Page.jpg')">
+                <div class="container position-relative px-4 px-lg-5" style="margin-top: 90px">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <div class="psnlInfo">
+                                <h2 class="loginHeading">Signup</h2>
+                                <form action="/createData" method="post">
+                                    <div>
+                                        <input name="firstName" type="text" class="loginTextElement" placeholder="User Name" />
+                                        <input name="password" type="password" class="loginTextElement" placeholder="Password" />
+                                        <input name="repeatPassword" type="password" class="loginTextElement" placeholder="Repeat Password" />
+                                        <select name="type" id="type">
                     <option value="driver">Driver</option>
                     <option value="admin">Admin</option>
                     <option value="examiner">Examiner</option>
                   </select>
+                                    </div>
+                                    <% if (obj.showErrorMsg) { %>
+                                        <p style="color: red; text-align: center;">
+                                            <%= errorMessages.passwordError[0] %>
+                                        </p>
+                                        <% } %>
+                                            <% if (obj.showUserNameError) { %>
+                                                <p style="color: red; text-align: center;">
+                                                    <%= errorMessages.userNameError[0] %>
+                                                </p>
+                                                <% } %>
+                                                    <input style="background-color: #11d9c6; color: white;" type="submit" class="sbmtBtn" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <% if (obj.showErrorMsg) { %>
-                 <p style="color: red; text-align: center;">Passwords did not Match</p>
-                <% } %>
-                <% if (obj.showUserNameError) { %>
-                 <p style="color: red; text-align: center;">Username is already taken</p>
-                <% } %>
-                <input type="submit" class="sbmtBtn" />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- Post Content-->
-    <!-- Footer-->
-    <%- include("layouts/footer") -%> <%- include("layouts/scripts") -%>
-  </body>
+            </header>
+            <!-- Post Content-->
+            <!-- Footer-->
+            <%- include("layouts/footer") -%>
+                <%- include("layouts/scripts") -%>
+    </body>
+
 </html>

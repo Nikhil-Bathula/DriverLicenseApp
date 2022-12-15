@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("layouts/header") -%>
-  <body>
-    <!-- Navigation-->
-    <%- include("layouts/navbar") -%>
-    <!-- Page Header-->
-    <header
-      class="masthead"
-      style="background-image: url('assets/img/Information.webp')"
-    >
-      <!-- <div class="container position-relative px-4 px-lg-5">
+<%- include("layouts/header") -%>
+
+    <body>
+        <!-- Navigation-->
+        <%- include("layouts/navbar") -%>
+            <!-- Page Header-->
+            <header class="masthead" style="background-image: url('assets/img/Information.webp')">
+                <!-- <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
             <div class="checkInfo">
@@ -32,123 +30,107 @@
         </div>
       </div> -->
 
-      <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-            <form method="POST" action="/updatePersonalInfo">
-              <div class="psnlInfo">
-                <h2 class="psnlInfoHeading">Personal Information</h2>
-                <div>
-                  <input
-                    id="id"
-                    name="id"
-                    type="hidden"
-                    value=<%= personalInfo._id %>
-                  />
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    type="hidden"
-                    class="loginTextElement"
-                    placeholder="First Name"
-                    value=<%= personalInfo.firstName %>
-                  >
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    type="hidden"
-                    class="loginTextElement"
-                    placeholder="Last Name"
-                    value=<%= personalInfo.lastName %>
-                  >
-                  <input
-                    id="firstName"
-                    name="firstNam"
-                    type="text"
-                    class="loginTextElement"
-                    placeholder="First Name"
-                    disabled
-                    value=<%= personalInfo.firstName %>
-                  >
-                  <input
-                    id="lastName"
-                    name="lastNam"
-                    type="text"
-                    class="loginTextElement"
-                    placeholder="Last Name"
-                    disabled
-                    value=<%=personalInfo.lastName%>
-                  >
-                </div>
-                <div>
-                  <input
-                    id="licenseNumber"
-                    name="licenseNumber"
-                    type="hidden"
-                    class="loginTextElement"
-                    placeholder="License Number"
-                    value=<%=personalInfo.licenseNumber%>
-                  >
-                  <input
-                    name="age"
-                    type="hidden"
-                    class="loginTextElement"
-                    placeholder="Age"
-                    value=<%= personalInfo.age %>
-                  >
-                  <input
-                    name="ag"
-                    type="number"
-                    class="loginTextElement"
-                    placeholder="Age"
-                    disabled
-                    value=<%= personalInfo.age %>
-                  >
-                </div>
-              </div>
-              <div class="carDtls">
-                <h2 class="cardtlsHeading">Car Details</h2>
-                <input
-                  id="make"
-                  name="make"
-                  type="text"
-                  class="loginTextElement"
-                  placeholder="Company"
-                  value=<%=personalInfo.carDetails.make%>
-                >
-                <input
-                  id="model"
-                  name="model"
-                  type="text"
-                  class="loginTextElement"
-                  placeholder="Model"
-                  value=<%=personalInfo.carDetails.model%>
-                >
-                <input
-                  id="year"
-                  name="year"
-                  type="number"
-                  class="loginTextElement"
-                  placeholder="Year"
-                  value=<%=personalInfo.carDetails.year%>
-                >
-                <input
-                  id="platNo"
-                  name="platNo"
-                  type="text"
-                  class="loginTextElement"
-                  placeholder="Plate Number"
-                  value=<%=personalInfo.carDetails.plateNo%>
-                >
-              </div>
-              <input type="submit" value="Update" class="sbmtBtn" />
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- Main Content-->
-    <!-- Footer-->
-    <%- include("layouts/footer") -%> <%- include("layouts/scripts") -%>
-  </body>
+                <div class="container position-relative px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <form method="POST" action="/updatePersonalInfo">
+                                <div class="psnlInfo">
+                                    <h2 class="psnlInfoHeading">Personal Information</h2>
+                                    <div>
+                                        <input id="id" name="id" type="hidden" value=<%=personalInfo._id %> />
+                                        <input id="firstName" name="firstName" type="hidden" class="loginTextElement" placeholder="First Name" value=<%=personalInfo.firstName %> >
+                                        <input id="lastName" name="lastName" type="hidden" class="loginTextElement" placeholder="Last Name" value=<%=personalInfo.lastName %> >
+                                        <input id="firstName" name="firstNam" type="text" class="loginTextElement" placeholder="First Name" disabled value=<%=personalInfo.firstName %> >
+                                        <input id="lastName" name="lastNam" type="text" class="loginTextElement" placeholder="Last Name" disabled value=<%=personalInfo.lastName%> >
+                                    </div>
+                                    <div>
+                                        <input id="licenseNumber" name="licenseNumber" type="hidden" class="loginTextElement" placeholder="License Number" value=<%=personalInfo.licenseNumber%> >
+                                        <input name="age" type="hidden" class="loginTextElement" placeholder="Age" value=<%=personalInfo.age %> >
+                                        <input name="ag" type="number" class="loginTextElement" placeholder="Age" disabled value=<%=personalInfo.age %> >
+                                        <input name="date" type="date" id="dateValueG2" class="loginTextElement" placeholder="Date" />
+                                    </div>
+                                    <div>
+                                        <input name="date" type="hidden" id="hiddenDateValueG2" class="loginTextElement" placeholder="Date" value=<%=stringData %> />
+                                        <select name="g2time" id="g2time">
+                                      </select>
+                                        <input type="hidden" name="hiddenG2Time" id="hiddenG2Time">
+                                    </div>
+                                    <div style="margin-top: 15px;">
+                                        <select name="testType" id="testType">
+        <option value="G2">G2</option>
+        <option value="G">G</option>
+      </select>
+                                    </div>
+                                    <div class="carDtls">
+                                        <h2 class="cardtlsHeading">Car Details</h2>
+                                        <div style="display: flex;">
+                                            <input id="make" name="make" type="text" class="loginTextElement" placeholder="Company" value=<%=personalInfo.carDetails.make%> >
+                                            <input id="model" name="model" type="text" class="loginTextElement" placeholder="Model" value=<%=personalInfo.carDetails.model%> >
+                                        </div>
+                                        <div style="display: flex;">
+                                            <input id="year" name="year" type="number" class="loginTextElement" placeholder="Year" value=<%=personalInfo.carDetails.year%> >
+                                            <input id="platNo" name="platNo" type="text" class="loginTextElement" placeholder="Plate Number" value=<%=personalInfo.carDetails.plateNo%> >
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="Update" class="sbmtBtn" /><br/>
+                            </form>
+                            <% if (showStatusPopup) { %>
+                                <form action="/closeStatusPopup" method="post">
+                                    <div id="popup_box1">
+                                        <table style="margin: 15px;">
+                                            <tr>
+                                                <th style="border: 1px solid cadetblue;
+                                                text-align: left;
+                                                padding: 8px;">Comments</th>
+                                                <th style="border: 1px solid cadetblue;
+                                                text-align: left;
+                                                padding: 8px;">Status</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid cadetblue;
+                                                text-align: left;
+                                                padding: 8px;">
+                                                    <%= result.comments  %>
+                                                </td>
+                                                <td style="border: 1px solid cadetblue;
+                                                text-align: left;
+                                                padding: 8px;">
+                                                    <%= result.testStatus %>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div><input style="text-align: center; background-color: #904e4e;
+                                          border: none;
+                                          color: white;
+                                          padding: 15px 32px;
+                                          text-align: center;
+                                          text-decoration: none;
+                                          align-content: center;
+                                          margin-left: 200px;
+                                          display: inline-block;
+                                          font-size: 16px;
+                                          border-radius: 20px;
+                                          margin: 4px 2px;
+                                          cursor: pointer;
+                                          margin-left: 200px;
+                                          -webkit-transition-duration: 0.4s;
+                                          transition-duration: 0.4s;" type="submit" value="Close" id="closePopup" /></div>
+                                    </div>
+                                </form>
+                                <% } %>
+
+
+                                    <br/>
+                            <form action="/getResult" style="margin-top: 15px;" method="get"><input type="submit" value="Check Result" class="sbmtBtn" /><br/></form>
+                            </div>
+                        </div>
+                    </div>
+            </header>
+            <!-- Main Content-->
+            <!-- Footer-->
+            <%- include("layouts/footer") -%>
+                <%- include("layouts/scripts") -%>
+    </body>
+
 </html>
