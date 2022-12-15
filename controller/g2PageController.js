@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const Appointments = require("../models/Appointments");
 
 const g2Page = async(req, res) => {
-    if (req.session.userType === "admin") {
+    if (req.session.userType === "admin" || req.session.userType === 'examiner') {
         res.redirect("/");
     } else {
         let showStatusPopup = false;

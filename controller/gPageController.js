@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Appointments = require("../models/Appointments");
 
 const gPage = async(req, res) => {
-    if (req.session.userType === 'admin' && req.session.userType === 'examiner') {
+    if (req.session.userType === 'admin' || req.session.userType === 'examiner') {
         res.redirect('/')
     } else {
         const allAppointments = await Appointments.find({ isTimeSlotAvailable: { $in: true } });
