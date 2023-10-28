@@ -18,7 +18,7 @@ $(document).ready(function() {
             const month = new Date(data.date).getMonth() + 1;
             let date = new Date(data.date).getDate() + 1;
             if (date <= 9) {
-                date = Number("0" + date);
+                date = "0" + date;
             }
             const combinedDate = (new Date(data.date).getFullYear() + "-" + month + "-" + date).toString();
             console.log(combinedDate, document.getElementById("dateValue").value, 'combinedDate')
@@ -62,6 +62,7 @@ $(document).ready(function() {
         })
     });
     $("#dateValueG2").on("change", function() {
+        $('#g2time').empty();
         $('#g2time').append($('<option>', {
             value: '',
             text: ''
