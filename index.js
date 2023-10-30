@@ -38,9 +38,6 @@ app.set("view engine", "ejs");
 
 mongoose.connect(
     process.env.MONGO_URL,
-    // "mongodb+srv://nbathula8123:Bathmay2022@nikhiklmongodb.hvjp42q.mongodb.net/fall22?retryWrites=true&w=majority",
-    // "mongodb+srv://nikhiklmongodb.hvjp42q.mongodb.net/licenseApp?retryWrites=true&w=majority",
-    // { user: "nbathula8123", pass: "Bathmay2022" },
     { useNewUrlParser: true }
 );
 
